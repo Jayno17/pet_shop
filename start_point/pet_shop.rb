@@ -22,12 +22,26 @@ def stock_count(pet_shop)
   return pet_shop[:pets].count
 end
 
-def pets_by_breed(shop, breed)
+def pets_by_breed(pet_shop, breed)
   breeds_array = []
-  for pet in shop[:pets]
+  for pet in pet_shop[:pets]
     if breed == pet[:breed]
       breeds_array.push(pet[:breed])
     end
   end
   return breeds_array
 end
+
+
+def find_pet_by_name(pet_shop, name)
+  for pet in pet_shop[:pets]
+    if name == pet[:name]
+      return pet
+    end
+  end
+end
+
+  # def test_find_pet_by_name__returns_pet
+  #   pet = find_pet_by_name(@pet_shop, "Arthur")
+  #   assert_equal("Arthur", pet[:name])
+  # end
